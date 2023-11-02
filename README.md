@@ -51,3 +51,9 @@ we added an icon using react-icons library
 # import classNames from 'classnames';
 with the use of the classnames library we can use the function classNames and give it the classes we want to render and the condition to render and then it returns a string of the class names depending on the condition.
 
+# Interaction with data base:
+to allow Our application to interact with the data base we are going to use prisma
+    1-to install it we use: npm install prisma
+    2-to initialize it we use: npx prisma init
+    3-we change the provider to mysql
+    4-
