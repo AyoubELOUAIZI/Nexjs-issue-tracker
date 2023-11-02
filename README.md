@@ -47,3 +47,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 3-starting with the navbar we create the component in the app folder not in the component folder because it is not a reausebel component.
 <!--  -->
 we added an icon using react-icons library
+<!-- the second solution for the hyliting the active link -->
+# import classNames from 'classnames';
+with the use of the classnames library we can use the function classNames and give it the classes we want to render and the condition to render and then it returns a string of the class names depending on the condition.
+
