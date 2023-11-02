@@ -44,3 +44,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 <!-- notes of the Project -->
 1- installing the extentions tailwind css,typescript ,prisma
 2-sart the virsion 13.4.19
+3-starting with the navbar we create the component in the app folder not in the component folder because it is not a reausebel component.
+<!--  -->
+we added an icon using react-icons library

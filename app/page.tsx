@@ -1,7 +1,12 @@
 import Image from 'next/image'
+import NavBar from './NavBar'
 
 export default function Home() {
   return (
-   <main>Hello world</main>
+   
+   <main>
+     <NavBar/>
+     Hello World
+   </main>
   )
 }
