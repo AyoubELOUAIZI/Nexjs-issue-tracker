@@ -69,3 +69,9 @@ to allow Our application to interact with the data base we are going to use pris
     3-
 # Building the new Issue page:
     1-we just want to build a page that has tow input fields maybe one for the titil and the other for the description.
+# Adding a markdown editor for the description field:
+    1-for that we are going to use React SimpleMDE (EasyMDE) Markdown Editor.
+    2-we run the commmand: npm install --save react-simplemde-editor easymde
+    3-it is very easy to to use we just import and use the component
+# Handling form submission:
+    1-
