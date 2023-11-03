@@ -56,4 +56,5 @@ to allow Our application to interact with the data base we are going to use pris
     1-to install it we use: npm install prisma
     2-to initialize it we use: npx prisma init
     3-we change the provider to mysql
-    4-
+    4-we can run the command npx prisma format to format the file.
+    5-
