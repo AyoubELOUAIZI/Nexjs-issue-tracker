@@ -74,4 +74,11 @@ to allow Our application to interact with the data base we are going to use pris
     2-we run the commmand: npm install --save react-simplemde-editor easymde
     3-it is very easy to to use we just import and use the component
 # Handling form submission:
-    1-
+    1-we will use the react hook form:
+    2-run the command npm install react-hook-form
+    3-then we use the register the most important thing
+    4-and of course we need to create an interface for the useForm hook
+    5-also we take looks in the example existing in the documentation of the form-hook
+    6-using the register directly with the simpleMDE does not work that why we need the Controller
+    7-
+
