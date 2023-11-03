@@ -67,3 +67,5 @@ to allow Our application to interact with the data base we are going to use pris
     1-the first we install it using the command : npm install @radix-ui/themes
     2-of course we are going to import it and use it ahah,but first we need to wrapp the lyout with the Theme from Radix UI.
     3-
+# Building the new Issue page:
+    1-we just want to build a page that has tow input fields maybe one for the titil and the other for the description.
