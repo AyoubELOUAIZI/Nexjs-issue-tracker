@@ -57,4 +57,8 @@ to allow Our application to interact with the data base we are going to use pris
     2-to initialize it we use: npx prisma init
     3-we change the provider to mysql
     4-we can run the command npx prisma format to format the file.
-    5-
+# building an api
+    1-we also used zod for data validation and then if the validation fails it will return an error ,but if the validation succeeds it should store the data in the database ,but how?
+    2-for storing the data in the database will use the prisma client so we need to stall it first.
+    3-we go to this site:"Best practice for instantiating PrismaClient with Next.js"
+    4-and we copie the code .
