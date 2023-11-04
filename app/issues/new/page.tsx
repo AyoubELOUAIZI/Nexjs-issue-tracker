@@ -6,11 +6,18 @@ import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { createIssueSchema } from "@/app/validationSchemas";
+import { z } from "zod";
+import ErrorMessage from "@/app/components/ErrorMessage";
 
-interface IssueForm {
-  title: string;
-  description: string;
-}
+// interface IssueForm {
+//   title: string;
+//   description: string;
+// }
+// we use this instead of interface to avoid redendants
+// so now the tipe of IssueForm is the same as the type of createIssueForm
+type IssueForm = z.infer<typeof createIssueSchema>;
 
 const NewIssuePage = () => {
   const router = useRouter();
@@ -23,7 +30,9 @@ const NewIssuePage = () => {
     // watch,
     control,
     formState: { errors },
-  } = useForm<IssueForm>();
+  } = useForm<IssueForm>({
+    resolver: zodResolver(createIssueSchema),
+  });
   //this is just writing the data in the console but we need to send the data to the api.
   //that why we will use axios.
   const onSubmit: SubmitHandler<IssueForm> = async (data) => {
@@ -43,15 +52,15 @@ const NewIssuePage = () => {
     <div className="max-w-xl space-y-3">
       {error && (
         <Callout.Root color="red" className="mb-5">
-          <Callout.Text>
-            {error}
-          </Callout.Text>
+          <Callout.Text>{error}</Callout.Text>
         </Callout.Root>
       )}
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-3" >
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
         <TextField.Root>
           <TextField.Input placeholder="Title" {...register("title")} />
         </TextField.Root>
+        <ErrorMessage>{errors.title?.message}</ErrorMessage>
+        {/* {errors.title && } */}
         {/* using the register directly with the simpleMDE does not work that why we need the Controller */}
         {/* <SimpleMDE placeholder="Description" {...register("description")} /> */}
         <Controller
@@ -61,6 +70,7 @@ const NewIssuePage = () => {
             <SimpleMDE placeholder="Description" {...field} />
           )}
         />
+        <ErrorMessage>{errors.description?.message}</ErrorMessage>
         <Button>Submit new Issue</Button>
       </form>
     </div>

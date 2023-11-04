@@ -83,5 +83,8 @@ to allow Our application to interact with the data base we are going to use pris
     7-
 # Error handling:
     1-So now we want to show the error to the user if something goes wrong.
-    2- 
+    2-npm install @hookform/resolvers
+    3-this pakage resolvers allows react-hook form to integrate with virious data validation librarys like zod
+    4-
+ 
 
