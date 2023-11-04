@@ -10,6 +10,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { createIssueSchema } from "@/app/validationSchemas";
 import { z } from "zod";
 import ErrorMessage from "@/app/components/ErrorMessage";
+import Spinner from "@/app/components/Spinner";
 
 // interface IssueForm {
 //   title: string;
@@ -23,6 +24,7 @@ const NewIssuePage = () => {
   const router = useRouter();
 
   const [error, setError] = useState("");
+  const [isSubmiting, setIsSubmiting] = useState(false);
 
   const {
     register,
@@ -37,10 +39,13 @@ const NewIssuePage = () => {
   //that why we will use axios.
   const onSubmit: SubmitHandler<IssueForm> = async (data) => {
     try {
+      setIsSubmiting(true);
       console.log("the data form the form : ", data);
       await axios.post("/api/issues", data);
       router.push("/issues");
+      setIsSubmiting(false);
     } catch (error) {
+      setIsSubmiting(false);
       console.log(error);
       setError("An unexpected error occurred!");
     }
@@ -71,7 +76,7 @@ const NewIssuePage = () => {
           )}
         />
         <ErrorMessage>{errors.description?.message}</ErrorMessage>
-        <Button>Submit new Issue</Button>
+        <Button disabled={isSubmiting}>Submit new Issue {isSubmiting&& <Spinner/>}</Button>
       </form>
     </div>
   );
