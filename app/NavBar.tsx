@@ -7,7 +7,7 @@ import classNames from 'classnames';
 
 const NavBar = () => {
   const currentPath=usePathname();
-  console.log("🚀 ~ file: Navbar.tsx:8 ~ NavBar ~ currentPath:", currentPath)
+  // console.log("🚀 ~ file: Navbar.tsx:8 ~ NavBar ~ currentPath:", currentPath)
   
   const links=[
     {label: "Dashboard",href: "/"},

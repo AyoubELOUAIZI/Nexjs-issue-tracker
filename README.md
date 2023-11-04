@@ -81,4 +81,7 @@ to allow Our application to interact with the data base we are going to use pris
     5-also we take looks in the example existing in the documentation of the form-hook
     6-using the register directly with the simpleMDE does not work that why we need the Controller
     7-
+# Error handling:
+    1-So now we want to show the error to the user if something goes wrong.
+    2- 
 
